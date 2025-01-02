@@ -5,3 +5,4 @@ This repository is home to the Todo List project of the Odin Project's Full Stac
 # Technologies used
 
 HTML, CSS and JS
+
