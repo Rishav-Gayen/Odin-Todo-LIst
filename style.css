@@ -1,0 +1,336 @@
+/* styles.css */
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+.header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-heading {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Main Layout */
+nav.sidebar {
+    background-color: #fff;
+    width: 250px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: calc(100vh - 80px); /* Full height minus header */
+    position: fixed;
+    left: 0;
+    top: 80px; /* Below the header */
+    overflow-y: auto;
+}
+
+.content {
+    margin-left: 250px; /* Offset for the sidebar */
+    padding: 20px;
+    flex: 1;
+}
+
+/* Sidebar Categories */
+.sidebar-categories p {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar-categories p:hover {
+    background-color: #f0f0f0;
+}
+
+.sidebar-categories p.active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Sidebar Projects */
+.sidebar-project {
+    margin-top: 20px;
+}
+
+.project-heading {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.project-projects {
+    margin-bottom: 20px;
+}
+
+.project {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.3s ease;
+}
+
+.project:hover {
+    background-color: #f9f9f9;
+}
+
+.project button {
+    margin-left: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.project button:hover {
+    background-color: #0056b3;
+}
+
+.project button.delete-project {
+    background-color: #dc3545;
+}
+
+.project button.delete-project:hover {
+    background-color: #a71d2a;
+}
+
+.add-project {
+    width: 100%;
+    background-color: #28a745;
+    color: #fff;
+    margin-top: 10px;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.add-project:hover {
+    background-color: #218838;
+}
+
+/* Content Section */
+.content-heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+.tasks {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.task-container {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.3s ease;
+}
+
+.task-container:hover {
+    background-color: #f9f9f9;
+}
+
+.task-check {
+    margin-right: 10px;
+}
+
+.task-title {
+    flex: 1;
+    font-size: 16px;
+}
+
+.task-description {
+    color: #666;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.task-date, .task-priority {
+    margin-left: 10px;
+    font-size: 14px;
+    color: #888;
+}
+
+.task-priority {
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+}
+
+.task-priority.High {
+    background-color: #ffcccc;
+    color: #dc3545;
+}
+
+.task-priority.Medium {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.task-priority.Low {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.edit-task, .delete-task {
+    margin-left: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.edit-task:hover {
+    background-color: #0056b3;
+}
+
+.delete-task {
+    background-color: #dc3545;
+}
+
+.delete-task:hover {
+    background-color: #a71d2a;
+}
+
+.add-task {
+    margin-top: 20px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.add-task:hover {
+    background-color: #218838;
+}
+
+/* Modal Styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #444;
+    text-align: center;
+}
+
+.modal-content input, .modal-content select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.modal-content button {
+    margin-right: 10px;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content button[type="submit"] {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.modal-content button[type="submit"]:hover {
+    background-color: #218838;
+}
+
+.cancel-button {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+.cancel-button:hover {
+    background-color: #5a6268;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav.sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+        margin-bottom: 20px;
+    }
+
+    .content {
+        margin-left: 0;
+    }
+
+    .project, .task-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .project button, .task-container button {
+        margin: 5px 0;
+        width: 100%;
+    }
+}
+
+
+.project, button, .home, .today, .week {
+    cursor: pointer;
+}
